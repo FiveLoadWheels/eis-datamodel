@@ -21,7 +21,6 @@ CREATE TABLE 'Customer' ('cid' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 						 'email' VARCHAR UNIQUE NOT NULL,
 						 'tel' CHAR);
 						 
-CREATE TABLE sqlite_sequence(name,seq);
 
 CREATE TABLE 'Order' ('oid' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 					  'status' INTEGER DEFAULT '1' NOT NULL,
