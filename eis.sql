@@ -1,13 +1,12 @@
 DROP TABLE IF EXISTS 'Customer';
-DROP TABLE IF EXISTS 'sqlite_sequence';
 DROP TABLE IF EXISTS 'Order';
 DROP TABLE IF EXISTS 'Address';
-DROP TABLE IF EXISTS 'Credit_Card';
+DROP TABLE IF EXISTS 'CreditCard';
 DROP TABLE IF EXISTS 'Product';
 DROP TABLE IF EXISTS 'Pro_consist_Acc';
 DROP TABLE IF EXISTS 'End_consist_Acc';
 DROP TABLE IF EXISTS 'Cart';
-DROP TABLE IF EXISTS 'End_Product';
+DROP TABLE IF EXISTS 'EndProduct';
 DROP TABLE IF EXISTS 'Supplier';
 DROP TABLE IF EXISTS 'Accessory';
 
@@ -23,17 +22,19 @@ CREATE TABLE 'Customer' ('cid' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 						 
 
 CREATE TABLE 'Order' ('oid' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-					  'status' INTEGER DEFAULT '1' NOT NULL,
-					  'cid' INTEGER NOT NULL);
+		      			'create_time' DATETIME NOT NULL,
+					'modify_time' DATETIME NOT NULL,
+					'status' INTEGER DEFAULT '1' NOT NULL,
+					'cid' INTEGER NOT NULL);
 					  
 CREATE TABLE 'Address' ('address' VARCHAR NOT NULL,
 						'cid' INTEGER NOT NULL);
 						
-CREATE TABLE 'Credit_Card' ('card_num' CHAR PRIMARY KEY NOT NULL,
+CREATE TABLE 'CreditCard' ('card_num' CHAR PRIMARY KEY NOT NULL,
 							'validate_code' CHAR NOT NULL,
 							'cid' INTEGER NOT NULL);
 							
-CREATE TABLE 'Product' ('pid' INTEGER PRIMARY KEY NOT NULL,
+CREATE TABLE 'Product' ('pid' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 						'model_name' VARCHAR NOT NULL,
 						'primary_price' INTEGER NOT NULL,
 						'screen_size' INTEGER NOT NULL);
@@ -48,7 +49,7 @@ CREATE TABLE 'Cart' ('cart_id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 					 'cid' INTEGER NOT NULL,
 					 'eid' INTEGER NOT NULL);
 					 
-CREATE TABLE 'End_Product' ('eid' INTEGER PRIMARY KEY NOT NULL,
+CREATE TABLE 'EndProduct' ('eid' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 							'status' INTEGER DEFAULT '1' NOT NULL,
 							'oid' INTEGER NOT NULL,
 							'serial_number' VARCHAR UNIQUE NOT NULL);
