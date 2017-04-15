@@ -38,7 +38,7 @@ CREATE TABLE 'credit_cards' ('card_num' CHAR PRIMARY KEY NOT NULL,
 CREATE TABLE 'product_models' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 						'modelName' VARCHAR NOT NULL,
 						'primaryPrice' INTEGER NOT NULL,
-						'screen_size' INTEGER NOT NULL);
+						'screenSize' INTEGER NOT NULL);
 						
 CREATE TABLE 'pro_consist_acc' ('pid' INTEGER NOT NULL,
 								'aid' INTEGER NOT NULL);
@@ -52,7 +52,7 @@ CREATE TABLE 'cart_items' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 					 
 CREATE TABLE 'products' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 							'status' INTEGER DEFAULT '1' NOT NULL,
-			 				'model' INTEGER NOT NULL,
+			 				'modelId' INTEGER NOT NULL,
 							'oid' INTEGER NOT NULL,
 							'serialNumber' VARCHAR UNIQUE NOT NULL);
 							
