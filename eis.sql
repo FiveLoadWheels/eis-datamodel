@@ -25,7 +25,8 @@ CREATE TABLE 'orders' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 		      			'ctime' DATETIME NOT NULL,
 					'mtime' DATETIME NOT NULL,
 					'status' INTEGER DEFAULT '1' NOT NULL,
-					'cid' INTEGER NOT NULL);
+					'cid' INTEGER NOT NULL,
+		      			'arriveTime' DATETIME);
 					  
 CREATE TABLE 'addresses' ('address' VARCHAR NOT NULL,
 						'cid' INTEGER NOT NULL);
