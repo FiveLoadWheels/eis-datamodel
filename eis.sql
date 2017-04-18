@@ -40,11 +40,11 @@ CREATE TABLE 'product_models' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 						'primaryPrice' INTEGER NOT NULL,
 						'screenSize' INTEGER NOT NULL);
 						
-CREATE TABLE 'pro_consist_acc' ('pid' INTEGER NOT NULL,
+CREATE TABLE 'mod_consist_acc' ('modelId' INTEGER NOT NULL,
 								'aid' INTEGER NOT NULL);
 								
-CREATE TABLE 'end_consist_acc' ('eid'  NOT NULL,
-								'aid'  NOT NULL);
+CREATE TABLE 'pro_consist_acc' ('pid' INTEGER NOT NULL,
+								'aid' INTEGER NOT NULL);
 								
 CREATE TABLE 'cart_items' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 					 'cid' INTEGER NOT NULL,
